@@ -1,0 +1,24 @@
+Añadir en la base de datos la cantidad de cada producto y una forma de 
+distinguirlo entre ellos 
+	- 100g 
+	- 1L 
+	- huevo
+	- lata 
+
+Estimación de lo que se va a gastar 
+
+Comparación entre lo que me costaría comprarlo en cada tienda 
+(y las cosas que no tienen) 
+
+Poder hacer la lista de la compra de forma gráfica 
+
+Añadir tiendas, productos y precios 
+
+Hacer una app 
+
+Poder editar y ver los precios en una tabla como excel 
+
+Pedirle que envíe una lista por tg 
+
+Añadir el precio esperado al lado de cada producto y al final de la
+lista lo que espero gastar 
