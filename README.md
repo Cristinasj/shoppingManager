@@ -12,15 +12,15 @@ bread
 2) Keep your database up to date. 
 So far, the program does not manage your database. It must be done manually with a plain text file named "data.txt" 
 The format is the following: 
-<number of shops> 
+
+numberOfShops(in this case 3) 
 carrefour
 aldi
 lidl
-...
-<number of products> 
-eggs <price in carrefour> <price in aldi> <price in lidl> ...
-milk <price in carrefour> <price in aldi> <price in lidl> ...
-bread <price in carrefour> <price in aldi> <price in lidl> ...
-... 
+numberOfProducts (in this case 4) 
+eggs <price in carrefour> <price in aldi> <price in lidl> 
+milk <price in carrefour> <price in aldi> <price in lidl> 
+bread <price in carrefour> <price in aldi> <price in lidl> 
+tissues <price in carrefour> <price in aldi> <price in lidl> 
 
-3) Download the source code and execute make on your terminal
+3) Download the source code and execute "make" on your terminal
