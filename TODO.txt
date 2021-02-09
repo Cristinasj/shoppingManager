@@ -1,24 +1,18 @@
-Añadir en la base de datos la cantidad de cada producto y una forma de 
-distinguirlo entre ellos 
-	- 100g 
-	- 1L 
-	- huevo
-	- lata 
+- Add unit of measure for the price and the ammount that the shop sells  
+	- kg 
+	- L 
+	- unit
 
-Estimación de lo que se va a gastar 
+- Stimate of how much it's going to cost 
+and spected price for every product in every shop 
 
-Comparación entre lo que me costaría comprarlo en cada tienda 
-(y las cosas que no tienen) 
+- Comparison between buying on every shop (and the things they don't have) 
 
-Poder hacer la lista de la compra de forma gráfica 
+- GUI for shopping list  
 
-Añadir tiendas, productos y precios 
+- Add and edit shops, products and prices  (table like excel)
 
-Hacer una app 
+- Make it a phone app 
 
-Poder editar y ver los precios en una tabla como excel 
+- Send the list as a message in TG  
 
-Pedirle que envíe una lista por tg 
-
-Añadir el precio esperado al lado de cada producto y al final de la
-lista lo que espero gastar 
