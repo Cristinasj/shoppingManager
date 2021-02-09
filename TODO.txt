@@ -4,7 +4,6 @@
 	- unit
 
 - Stimate of how much it's going to cost 
-and spected price for every product in every shop 
 
 - Comparison between buying on every shop (and the things they don't have) 
 
