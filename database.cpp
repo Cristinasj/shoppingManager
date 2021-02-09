@@ -2,6 +2,7 @@
 #include <iostream> 
 #include <fstream> 
 #include <algorithm>
+#include <utility>
 
 using namespace std; 
 
@@ -48,36 +49,45 @@ void Database::createLists(string shoppingList) {
 	file.close();
 	
 	// Creation of the smaller lists
-	vector<vector<string>> smallLists;  
+	vector<vector<pair<string,double>>> smallLists;  
 	// Name of the shop 
 	for (int i = 0; i < shops.size(); i++) { 
-		vector<string> aux;
+		vector<pair<string,double>> aux;
+		pair<string,double> first; 
+		aux.push_back(first); 
+		aux[0].second = 0.0; 
 		string shopName = shops[i]; 
 		// Capital leters 
 		for(char &c: shopName) {
 			if (c >= 'a' && c <= 'z')
 				c = c -32; 
 		}
-		aux.push_back(shopName); 
+		aux[0].first = shopName; 
 		smallLists.push_back(aux); 
 	}
 	
 	// Rest of the items 
-	vector<string>::iterator it;
-	vector<string>::iterator itproduct; 
+	vector<string>::iterator it; // Finding the product 
+	vector<string>::iterator itproduct; // The found product 
 	for (it=shopping.begin(); it!=shopping.end(); ++it) {
 		itproduct = find(products.begin(), products.end(), *it);
-		if (itproduct == products.end()) { // No in database
+		if (itproduct == products.end()) { // Not in database
 			// Add to every small list
 			for (int i=0; i<shops.size(); i++) {
-				smallLists[i].push_back(*it); 
+				pair<string,double> item; 
+				item.first = *it; 
+				item.second = 0; // By default the price is 0
+				smallLists[i].push_back(item); 
 			}
 		} else { // In database 
 			// Add to the shops with the lowest price
 			int index = distance(products.begin(), itproduct);
 			vector<int> cheapest = findCheapest(prices[index]); 
 			for (int i=0; i<cheapest.size(); ++i) {
-				smallLists[cheapest[i]].push_back(*it);
+				pair<string,double> item; 
+				item.first = *it; 
+				item.second = prices[index][cheapest[i]];
+				smallLists[cheapest[i]].push_back(item);
 			}
 		}
 	}
@@ -86,9 +96,9 @@ void Database::createLists(string shoppingList) {
 	ofstream shoptxt; 
 	for (int i = 0; i < shops.size(); i++) {
 		shoptxt.open(shops[i] + ".txt"); 
-		for (it = smallLists[i].begin(); 
-		     it != smallLists[i].end(); ++it) {
-			shoptxt << *it << endl; 
+		for (int j = 0; j < smallLists[i].size(); j++) {
+			shoptxt << smallLists[i][j].first << " "
+			        << smallLists[i][j].second << endl; 
 		}
 		shoptxt.close(); 
 	}
